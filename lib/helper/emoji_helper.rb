@@ -65,8 +65,9 @@ module RailsEmojiPicker
     if Rails.env.development?
       stanadrt_replace(string, img)
     elsif Rails.env.production?
-      url = image_tag("emoji/#{img[:name]}.png")[/img.*?src="(.*?)"/i, 1]
-      string.gsub!(img[:char], url)
+      stanadrt_replace(string, img)
+      # url = image_tag("emoji/#{img[:name]}.png")[/img.*?src="(.*?)"/i, 1]
+      # string.gsub!(img[:char], url)
     end
   end
 
